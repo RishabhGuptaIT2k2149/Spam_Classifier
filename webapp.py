@@ -13,7 +13,7 @@ from sklearn. naive_bayes import MultinomialNB
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
 
 # Load the dataset
-df = pd.read_csv('spam.csv', encoding='utf-8')
+df = pd.read_csv('spam.csv', encoding='latin1')
 df = df.drop(['Unnamed: 2', 'Unnamed: 3', 'Unnamed: 4'], axis=1)
 df.rename(columns={'v1': 'labels', 'v2': 'message'}, inplace=True)
 df.drop_duplicates(inplace=True)
