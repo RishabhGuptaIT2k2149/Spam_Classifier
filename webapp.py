@@ -13,7 +13,7 @@ from sklearn. naive_bayes import MultinomialNB
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
 
 # Load the dataset
-df = pd.read_csv('/Users/rishabh/Desktop/data_science_project_2k24/spam_project/spam.csv', encoding='latin1')
+df = pd.read_csv('spam.csv')
 df = df.drop(['Unnamed: 2', 'Unnamed: 3', 'Unnamed: 4'], axis=1)
 df.rename(columns={'v1': 'labels', 'v2': 'message'}, inplace=True)
 df.drop_duplicates(inplace=True)
@@ -70,7 +70,7 @@ def predict(text):
 
 #designing of webapp
 st.title('spam classifier')
-st.image('/Users/rishabh/Desktop/data_science_project_2k24/spam_project/spam.jpeg')
+st.image('spam.jpeg')
 st.write("""This Streamlit web app implements a spam classifier using a Multinomial Naive Bayes algorithm. The dataset, containing labeled messages, is preprocessed by removing duplicates and encoding labels. The text data is cleaned, converted into numerical format using CountVectorizer, and split into training and testing sets. A Naive Bayes model is trained on the training set and used to predict whether a user-input message is spam or not. The app provides an interactive interface where users can input a message, click 'predict', and receive the classification result, offering a user-friendly tool for spam detection.""")
 user_input = st.text_input('write your message')
 submit = st.button('predict')
